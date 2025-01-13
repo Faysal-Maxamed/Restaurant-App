@@ -106,17 +106,29 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Row(
                 children: [
-                  HomeCategoryWidget(),
+                  HomeCategoryWidget(
+                    nmetitle: "Foods",
+                    clr: btnclr,
+                    isselected: true,
+                  ),
                   SizedBox(
                     width: 10,
                   ),
-                  HomeCategoryWidget(),
+                  HomeCategoryWidget(
+                    nmetitle: "Pidzza",
+                  ),
                   SizedBox(
                     width: 10,
                   ),
-                  HomeCategoryWidget(),
+                  HomeCategoryWidget(
+                    nmetitle: "Fruits",
+                  ),
+                  SizedBox(
+                    width: 10,
+                  )
                 ],
-              )
+              ),
+              
             ],
           ),
         ),
