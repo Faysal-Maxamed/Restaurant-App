@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:resturent_app/constant/constant.dart';
+import 'package:resturent_app/pages/foods_page.dart';
 import 'package:resturent_app/widgets/discount_widget.dart';
 import 'package:resturent_app/widgets/home_category_widget.dart';
 
@@ -110,18 +111,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     nmetitle: "Foods",
                     clr: btnclr,
                     isselected: true,
+                    navpage: FoodsPageScreen(),
                   ),
                   SizedBox(
                     width: 10,
                   ),
                   HomeCategoryWidget(
                     nmetitle: "Pidzza",
+                    navpage: FoodsPageScreen(),
                   ),
                   SizedBox(
                     width: 10,
                   ),
                   HomeCategoryWidget(
                     nmetitle: "Fruits",
+                    navpage: FoodsPageScreen(),
                   ),
                   SizedBox(
                     width: 10,
@@ -160,17 +164,49 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 20,
+              ),
               Expanded(
                 child: GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         crossAxisSpacing: 10,
                         mainAxisSpacing: 10,
-                        mainAxisExtent: 200),
+                        mainAxisExtent: 240),
                     itemCount: 4,
                     itemBuilder: (context, index) {
                       return Container(
-                        color: Colors.amber,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.asset(
+                              "images/SauceTonkatsu.png",
+                              width: double.infinity,
+                              fit: BoxFit.fitWidth,
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 20),
+                              child: Text(
+                                "Chicken Biryani",
+                                style: GoogleFonts.poppins(fontSize: 16),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: Text(
+                                "Ambrosia Hotel & Restaurant",
+                                style: GoogleFonts.inter(fontSize: 14),
+                              ),
+                            )
+                          ],
+                        ),
                       );
                     }),
               )
