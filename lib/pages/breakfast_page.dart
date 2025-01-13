@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:resturent_app/constant/constant.dart';
+import 'package:resturent_app/pages/breakfast_detail_page.dart';
 import 'package:resturent_app/widgets/popular_recips_widget.dart';
 
 class BreakfastPageScreen extends StatelessWidget {
@@ -59,74 +60,82 @@ class BreakfastPageScreen extends StatelessWidget {
                 ),
                 itemCount: 4,
                 itemBuilder: (context, index) {
-                  return Container(
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.black.withOpacity(0.15),
-                            spreadRadius: 5,
-                            blurRadius: 7,
-                            offset: Offset(0, 3))
-                      ],
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
+                  return GestureDetector(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => BreakfastDetailPageScreen(),
+                      ),
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 15,
-                        ),
-                        Center(
-                          child: Image.asset(
-                            "images/hum1.png",
+                    child: Container(
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.black.withOpacity(0.15),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset: Offset(0, 3))
+                        ],
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 15,
                           ),
-                        ),
-                        SizedBox(
-                          height: 7,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: Text(
-                            "Chicken",
-                            style: GoogleFonts.poppins(fontSize: 16),
+                          Center(
+                            child: Image.asset(
+                              "images/hum1.png",
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: Text(
-                            "100 gr chicken + tomato + cheese  Lettuce",
-                            style: GoogleFonts.roboto(
-                                fontSize: 12, color: Color(0xff3B3B3B)),
+                          SizedBox(
+                            height: 7,
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: Row(
-                            children: [
-                              Text(
-                                "\$20.00",
-                                style: GoogleFonts.dmSans(color: btnclr),
-                              ),
-                              Spacer(),
-                              TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(
-                                  backgroundColor: btnclr,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: Text(
+                              "Chicken",
+                              style: GoogleFonts.poppins(fontSize: 16),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: Text(
+                              "100 gr chicken + tomato + cheese  Lettuce",
+                              style: GoogleFonts.roboto(
+                                  fontSize: 12, color: Color(0xff3B3B3B)),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "\$20.00",
+                                  style: GoogleFonts.dmSans(color: btnclr),
+                                ),
+                                Spacer(),
+                                TextButton(
+                                  onPressed: () {},
+                                  style: TextButton.styleFrom(
+                                    backgroundColor: btnclr,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    minimumSize: Size(20, 24),
                                   ),
-                                  minimumSize: Size(20, 24),
-                                ),
-                                child: Icon(
-                                  Icons.add,
-                                  color: Colors.white,
-                                ),
-                              )
-                            ],
-                          ),
-                        )
-                      ],
+                                  child: Icon(
+                                    Icons.add,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   );
                 }),
