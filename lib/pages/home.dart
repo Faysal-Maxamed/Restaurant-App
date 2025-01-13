@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:resturent_app/constant/constant.dart';
 import 'package:resturent_app/pages/foods_page.dart';
+import 'package:resturent_app/pages/pidzza_page.dart';
 import 'package:resturent_app/widgets/discount_widget.dart';
 import 'package:resturent_app/widgets/home_category_widget.dart';
 
@@ -118,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   HomeCategoryWidget(
                     nmetitle: "Pidzza",
-                    navpage: FoodsPageScreen(),
+                    navpage: PidzzaPageScreen(),
                   ),
                   SizedBox(
                     width: 10,

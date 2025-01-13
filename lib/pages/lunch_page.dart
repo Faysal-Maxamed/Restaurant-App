@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:resturent_app/constant/constant.dart';
 import 'package:resturent_app/widgets/popular_recips_widget.dart';
 
-class BreakfastPageScreen extends StatelessWidget {
-  const BreakfastPageScreen({super.key});
+class LunchPageScreen extends StatelessWidget {
+  const LunchPageScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,29 +17,7 @@ class BreakfastPageScreen extends StatelessWidget {
             height: 40,
           ),
           Text(
-            "Popular Recipes",
-            style: GoogleFonts.poppins(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Color(0xff0A2533),
-            ),
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              PopularRecips(),
-              PopularRecips(),
-              PopularRecips(),
-            ],
-          ),
-          SizedBox(
-            height: 40,
-          ),
-          Text(
-            "Breakfast Available",
+            "Lunch  Available",
             style: GoogleFonts.poppins(
               fontSize: 20,
               fontWeight: FontWeight.bold,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:resturent_app/constant/constant.dart';
 import 'package:resturent_app/pages/breakfast_page.dart';
+import 'package:resturent_app/pages/dinner_page.dart';
+import 'package:resturent_app/pages/lunch_page.dart';
 
 class FoodsPageScreen extends StatelessWidget {
   const FoodsPageScreen({super.key});
@@ -79,8 +81,8 @@ class FoodsPageScreen extends StatelessWidget {
                       child: TabBarView(
                         children: [
                           BreakfastPageScreen(),
-                          Center(child: Text("Tab 2 Content")),
-                          Center(child: Text("Tab 3 Content")),
+                          LunchPageScreen(),
+                          DinnerPageScreen()
                         ],
                       ),
                     ),
