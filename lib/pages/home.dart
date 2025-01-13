@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:resturent_app/constant/constant.dart';
 import 'package:resturent_app/widgets/discount_widget.dart';
+import 'package:resturent_app/widgets/testwidget.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -103,68 +104,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontWeight: FontWeight.bold,
                     color: Color(0xff0A2533)),
               ),
-              DefaultTabController(
-                length: 3,
-                child: Column(
-                  children: [
-                    Material(
-                      child: Container(
-                        height: 55,
-                        color: Colors.white,
-                        child: TabBar(
-                            physics: ClampingScrollPhysics(),
-                            unselectedLabelColor: Colors.pink,
-                            labelStyle: TextStyle(color: Colors.white),
-                            indicatorSize: TabBarIndicatorSize.label,
-                            padding: EdgeInsets.all(10),
-                            indicator: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.pink),
-                            tabs: [
-                              Tab(
-                                child: Container(
-                                  height: 35,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(30),
-                                      border: Border.all(
-                                          color: Colors.pinkAccent, width: 1)),
-                                  child: Align(
-                                    alignment: Alignment.center,
-                                    child: Text("Chat"),
-                                  ),
-                                ),
-                              ),
-                              Tab(
-                                child: Container(
-                                  height: 35,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(30),
-                                      border: Border.all(
-                                          color: Colors.pinkAccent, width: 1)),
-                                  child: Align(
-                                    alignment: Alignment.center,
-                                    child: Text("Chat"),
-                                  ),
-                                ),
-                              ),
-                              Tab(
-                                child: Container(
-                                  height: 35,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(30),
-                                      border: Border.all(
-                                          color: Colors.pinkAccent, width: 1)),
-                                  child: Align(
-                                    alignment: Alignment.center,
-                                    child: Text("Chat"),
-                                  ),
-                                ),
-                              )
-                            ]),
-                      ),
+              Row(
+                children: [
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        minimumSize: Size(95, 41),
+                        backgroundColor: btnclr,
+                        foregroundColor: Colors.white),
+                    child: Text(
+                      "Foods",
+                      style: GoogleFonts.inter(fontSize: 16),
                     ),
-                  ],
-                ),
+                  )
+                ],
               )
             ],
           ),
