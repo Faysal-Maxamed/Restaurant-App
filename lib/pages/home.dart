@@ -128,6 +128,38 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
                 ],
               ),
+              SizedBox(
+                height: 10,
+              ),
+              ListTile(
+                contentPadding: EdgeInsets.zero,
+                title: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Today New Arivable",
+                      style: GoogleFonts.poppins(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xff1F2937)),
+                    ),
+                    Text(
+                      "Best of the today  food list update",
+                      style: GoogleFonts.inter(
+                          color: Color(0xff6B7280),
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
+                trailing: Text(
+                  "see all",
+                  style: GoogleFonts.inter(
+                    fontSize: 14,
+                    color: Color(0xff6B7280),
+                  ),
+                ),
+              ),
               
             ],
           ),
