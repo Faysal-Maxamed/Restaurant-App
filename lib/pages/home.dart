@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:resturent_app/constant/constant.dart';
 import 'package:resturent_app/widgets/discount_widget.dart';
-import 'package:resturent_app/widgets/testwidget.dart';
+import 'package:resturent_app/widgets/home_category_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -106,17 +106,15 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Row(
                 children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                        minimumSize: Size(95, 41),
-                        backgroundColor: btnclr,
-                        foregroundColor: Colors.white),
-                    child: Text(
-                      "Foods",
-                      style: GoogleFonts.inter(fontSize: 16),
-                    ),
-                  )
+                  HomeCategoryWidget(),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  HomeCategoryWidget(),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  HomeCategoryWidget(),
                 ],
               )
             ],
