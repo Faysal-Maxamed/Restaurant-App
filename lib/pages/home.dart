@@ -160,7 +160,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              
+              Expanded(
+                child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 10,
+                        mainAxisExtent: 200),
+                    itemCount: 4,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        color: Colors.amber,
+                      );
+                    }),
+              )
             ],
           ),
         ),
