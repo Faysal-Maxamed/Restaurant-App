@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:resturent_app/constant/constant.dart';
 import 'package:resturent_app/pages/breakfast_detail_page.dart';
 import 'package:resturent_app/widgets/popular_recips_widget.dart';
-
 class BreakfastPageScreen extends StatelessWidget {
   const BreakfastPageScreen({super.key});
 
