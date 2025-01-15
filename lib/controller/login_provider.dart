@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
@@ -15,35 +14,40 @@ class LoginProvider extends ChangeNotifier {
   bool isloading = false;
   final box = GetStorage();
 
+  LoginProvider() {
+    getUserInfo();
+  }
+
   String get email => _email!;
   String get password => _password!;
 
-  getemail(String email) {
+  void getemail(String email) {
     _email = email;
     notifyListeners();
   }
 
-  getpassword(String password) {
+  void getpassword(String password) {
     _password = password;
     notifyListeners();
   }
 
-  login(BuildContext context) async {
-    box.write(isloggedIn, "isloggedIn");
+  Future<void> login(BuildContext context) async {
     isloading = true;
     notifyListeners();
     try {
-      var date = <String, dynamic>{"email": email, "password": password};
+      var data = {"email": email, "password": password};
 
       var response = await http.post(
         Uri.parse(endpoint + "users/login"),
-        body: jsonEncode(date),
+        body: jsonEncode(data),
         headers: {"Content-Type": "application/json"},
       );
 
       if (response.statusCode == 200) {
-        var decodedate = jsonDecode(response.body);
-        user = LoginModel.fromJson(decodedate);
+        var decodedData = jsonDecode(response.body);
+        user = LoginModel.fromJson(decodedData);
+        saveuser(user!);
+
         if (user!.isAdmin == true) {
           Navigator.push(
             context,
@@ -53,8 +57,9 @@ class LoginProvider extends ChangeNotifier {
           );
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-                backgroundColor: Colors.green,
-                content: Text('succsefully login')),
+              backgroundColor: Colors.green,
+              content: Text('Successfully logged in'),
+            ),
           );
         } else {
           Navigator.push(
@@ -70,5 +75,21 @@ class LoginProvider extends ChangeNotifier {
     }
     isloading = false;
     notifyListeners();
+  }
+
+  void saveuser(LoginModel user) {
+    box.write('UserInfo', user.toJson());
+    box.write('isloggedIn', "isloggedIn");
+    notifyListeners(); 
+  }
+
+  void getUserInfo() {
+    if (box.hasData('UserInfo')) {
+      var data = box.read('UserInfo');
+      if (data != null) {
+        user = LoginModel.fromJson(data);
+        notifyListeners();
+      }
+    }
   }
 }
