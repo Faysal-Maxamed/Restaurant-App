@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:resturent_app/constant/constant.dart';
 
 class HomeCategoryWidget extends StatelessWidget {
-  HomeCategoryWidget(
+   HomeCategoryWidget(
       {super.key, required this.nmetitle, this.clr, this.isselected = false,required this.navpage});
   final nmetitle;
   final clr;

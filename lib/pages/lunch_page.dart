@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:resturent_app/constant/constant.dart';
-import 'package:resturent_app/widgets/popular_recips_widget.dart';
 
 class LunchPageScreen extends StatelessWidget {
   const LunchPageScreen({super.key});
