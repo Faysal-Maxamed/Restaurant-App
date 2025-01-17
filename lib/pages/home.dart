@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Consumer<LoginProvider>(builder: (context, login, _) {
       return Scaffold(
         backgroundColor: backgrounclr,
-        drawer: Drawer(),
+        
         appBar: AppBar(
           backgroundColor: backgrounclr,
           title: ListTile(
