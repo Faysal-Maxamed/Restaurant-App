@@ -10,7 +10,7 @@ class MenuScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("menu Screen"),
       ),
-      body:Center(child: Text("hellow world"),),
+      body:Center(child: Text("hellow drawer"),),
     );
   }
 }

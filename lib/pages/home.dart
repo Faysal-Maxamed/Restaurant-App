@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:resturent_app/constant/constant.dart';
 import 'package:resturent_app/controller/login_provider.dart';
 import 'package:resturent_app/pages/foods_page.dart';
 import 'package:resturent_app/pages/pidzza_page.dart';
+import 'package:resturent_app/pages/zoom_drawer_screen.dart';
 import 'package:resturent_app/widgets/discount_widget.dart';
 import 'package:resturent_app/widgets/home_category_widget.dart';
 
@@ -21,8 +23,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return Consumer<LoginProvider>(builder: (context, login, _) {
       return Scaffold(
         backgroundColor: backgrounclr,
-        
         appBar: AppBar(
+          leading: IconButton(
+              onPressed: () {
+                ZoomDrawer.of(context)?.toggle();
+              },
+              icon: Icon(Icons.menu)),
           backgroundColor: backgrounclr,
           title: ListTile(
             contentPadding: EdgeInsets.zero,
