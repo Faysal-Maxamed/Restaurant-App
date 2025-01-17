@@ -47,7 +47,6 @@ class LoginProvider extends ChangeNotifier {
         var decodedData = jsonDecode(response.body);
         user = LoginModel.fromJson(decodedData);
         saveuser(user!);
-
         if (user!.isAdmin == true) {
           Navigator.push(
             context,
@@ -78,14 +77,14 @@ class LoginProvider extends ChangeNotifier {
   }
 
   void saveuser(LoginModel user) {
-    box.write('UserInfo', user.toJson());
-    box.write('isloggedIn', "isloggedIn");
-    notifyListeners(); 
+    box.write(UserInfo, user.toJson());
+    box.write(isloggedIn, "isloggedIn");
+    notifyListeners();
   }
 
   void getUserInfo() {
-    if (box.hasData('UserInfo')) {
-      var data = box.read('UserInfo');
+    if (box.hasData(UserInfo)) {
+      var data = box.read(UserInfo);
       if (data != null) {
         user = LoginModel.fromJson(data);
         notifyListeners();

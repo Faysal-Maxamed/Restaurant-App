@@ -21,47 +21,40 @@ class _HomeScreenState extends State<HomeScreen> {
     return Consumer<LoginProvider>(builder: (context, login, _) {
       return Scaffold(
         backgroundColor: backgrounclr,
+        drawer: Drawer(),
+        appBar: AppBar(
+          backgroundColor: backgrounclr,
+          title: ListTile(
+            contentPadding: EdgeInsets.zero,
+            title: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  login.user!.name!,
+                  style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    color: Color(0xff0A2533),
+                  ),
+                ),
+                // Text(
+                //   login.user!.email!,
+                //   style: GoogleFonts.poppins(
+                //       fontSize: 14, color: Color(0xff0A2533)),
+                // ),
+              ],
+            ),
+            trailing: CircleAvatar(
+              radius: 25,
+              backgroundImage: AssetImage("images/profile.png"),
+            ),
+          ),
+        ),
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 40,
-                ),
-                ListTile(
-                  contentPadding: EdgeInsets.zero,
-                  title: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Image.asset("images/Sun.png"),
-                          SizedBox(
-                            width: 4,
-                          ),
-                          Text(
-                            "Good Morning",
-                            style: GoogleFonts.poppins(
-                                fontSize: 14, color: Color(0xff0A2533)),
-                          ),
-                        ],
-                      ),
-                      Text(
-                        login.user!.name!,
-                        style: GoogleFonts.poppins(
-                          fontSize: 16,
-                          color: Color(0xff0A2533),
-                        ),
-                      ),
-                    ],
-                  ),
-                  trailing: CircleAvatar(
-                    radius: 25,
-                    backgroundImage: AssetImage("images/profile.png"),
-                  ),
-                ),
                 SizedBox(
                   height: 20,
                 ),

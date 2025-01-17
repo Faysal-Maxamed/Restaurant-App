@@ -20,7 +20,7 @@ void main() async {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: hasdate? OnboardingScreen():HomeScreen() ,
+        home: hasdate? HomeScreen() :OnboardingScreen(),
       ),
     ),
   );
